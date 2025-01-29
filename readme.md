@@ -21,7 +21,6 @@
 <!-- TODO: Change the WD-Template-Project into the same name of your folder -->
 ![](https://visit-counter.vercel.app/counter.png?page=metrotee1/AWD-Seatwork-1-3-MI-25)
 
-)
 
 [![wakatime](https://wakatime.com/badge/user/018efa0c-7198-421a-8594-9f8c198a9e3e/project/b9cf7126-99c9-49c6-9d7e-c3cc5233c9ae.svg)](https://wakatime.com/badge/user/018efa0c-7198-421a-8594-9f8c198a9e3e/project/b9cf7126-99c9-49c6-9d7e-c3cc5233c9ae)
 
@@ -65,6 +64,7 @@ Description of the project in details.
 Guiding Question:
 
 -Offer 2 movies for viewing.
+
 -Check if 10 seats are available when a reservation is made.
 
 ### Key Components
