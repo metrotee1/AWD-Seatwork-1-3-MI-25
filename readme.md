@@ -19,7 +19,7 @@
 
 <!-- TODO: Change the zyx-0314 into your github username  -->
 <!-- TODO: Change the WD-Template-Project into the same name of your folder -->
-![](https://visit-counter.vercel.app/counter.png?page=metrotee1/AWD-Seatwork-1-3-MI-25
+![](https://visit-counter.vercel.app/counter.png?page=metrotee1/AWD-Seatwork-1-3-MI-25)
 
 )
 
@@ -63,6 +63,7 @@
 Description of the project in details.
 
 Guiding Question:
+
 -Offer 2 movies for viewing.
 -Check if 10 seats are available when a reservation is made.
 
