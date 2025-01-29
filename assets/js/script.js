@@ -56,5 +56,5 @@ function unreserveSeats(movie) {
 function hideStatusAfterDelay(statusElement) {
     setTimeout(() => {
         statusElement.innerText = '';
-    }, 3000);
+    }, 5000);
 }
