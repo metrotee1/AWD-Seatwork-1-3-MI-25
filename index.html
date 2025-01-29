@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Reservation</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <a href="./index.html">
+                    <img src="./assets/img/kllogo.png" alt="logo" class="logo">
+                </a>
+            </div>
+            <div class="header-text">Cinema Reservation</div>
+        </div>
+    </header>
+    <div id="now-showing">
+        NOW SHOWING
+    </div>
+    <div id="movies">
+        <div class="movie">
+            <img src="/assets/img/dpwlv.jpg" alt="Movie 1">
+            <button onclick="reserveSeats('movie1')">Reserve seats for Movie 1</button>
+            <input type="number" id="movie1Seats" min="1" max="10" value="1" />
+            <button onclick="unreserveSeats('movie1')">Remove reserved seats</button>
+            <p id="status_movie1" class="status-output"></p>
+        </div>
+        <div class="movie">
+            <img src="/assets/img/joker.jpeg" alt="Movie 2">
+            <button onclick="reserveSeats('movie2')">Reserve seats for Movie 2</button>
+            <input type="number" id="movie2Seats" min="1" max="10" value="1" />
+            <button onclick="unreserveSeats('movie2')">Remove reserved seats</button>
+            <p id="status_movie2" class="status-output"></p>
+        </div>
+    </div>
+
+    <script src="/assets/js/script.js"></script>
+
+    <footer>
+        <p>&copy; 2024 JIMM. All rights reserved.</p>
+      </footer>
+</body>
+</html>
