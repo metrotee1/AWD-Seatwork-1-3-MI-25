@@ -4,25 +4,26 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/zyx-0314/">
+  <a href="https://github.com/metrotee1/">
   <!-- TODO: If you want to add logo or banner you can add it here -->
-    <img src="./assets/img/nyebe_white.png" alt="Nyebe" width="130" height="100">
+    <img src="./assets/img/kllogo.png" alt="Nyebe" width="130" height="100">
   </a>
 <!-- TODO: Change Title to the name of the title of your Project -->
-  <h3 align="center">Title</h3>
+  <h3 align="center">AWD-Seatwork-1-3-MI-25</h3>
 </div>
 <!-- TODO: Make a short description -->
 <div align="center">
-  Short Description. (Optional)
 </div>
 
 <br />
 
 <!-- TODO: Change the zyx-0314 into your github username  -->
 <!-- TODO: Change the WD-Template-Project into the same name of your folder -->
-![](https://visit-counter.vercel.app/counter.png?page=zyx-0314/WD-Template-Project)
+![](https://visit-counter.vercel.app/counter.png?page=metrotee1/AWD-Seatwork-1-3-MI-25
 
-[![wakatime](https://wakatime.com/badge/user/018dd99a-4985-4f98-8216-6ca6fe2ce0f8/project/63501637-9a31-42f0-960d-4d0ab47977f8.svg)](https://wakatime.com/badge/user/018dd99a-4985-4f98-8216-6ca6fe2ce0f8/project/63501637-9a31-42f0-960d-4d0ab47977f8)
+)
+
+[![wakatime](https://wakatime.com/badge/user/018efa0c-7198-421a-8594-9f8c198a9e3e/project/b9cf7126-99c9-49c6-9d7e-c3cc5233c9ae.svg)](https://wakatime.com/badge/user/018efa0c-7198-421a-8594-9f8c198a9e3e/project/b9cf7126-99c9-49c6-9d7e-c3cc5233c9ae)
 
 ---
 
@@ -62,17 +63,13 @@
 Description of the project in details.
 
 Guiding Question:
-- What is the project
-- Whats the purpose
-- What are key components
-- What technology used and how it is used
+-Offer 2 movies for viewing.
+-Check if 10 seats are available when a reservation is made.
 
 ### Key Components
 <!-- TODO: List of Key Components -->
 <!-- The following are just sample -->
 - MultiPage Website/Single Page Website
-- Parallax transition
-- Transactional
 
 ### Technology
 <!-- TODO: List of Technology Used -->
@@ -92,7 +89,7 @@ Guiding Question:
 7. File Structure to follow below.
 
 ```
-WD-ProjectName
+AWD-Seatwork-1-3-MI-25
 └─ assets
 |   └─ css
 |   |   └─ style.css
@@ -100,17 +97,9 @@ WD-ProjectName
 |   |   └─ fileWith.jpeg/.jpg/.webp/.png
 |   └─ js
 |       └─ script.js
-└─ pages
-|  └─ pageName
-|     └─ assets
-|     |  └─ css
-|     |  |  └─ style.css
-|     |  └─ img
-|     |  |  └─ fileWith.jpeg/.jpg/.webp/.png
-|     |  └─ js
-|     |     └─ script.js
-|     └─ index.html
+|
 └─ index.html
+└─ LICENSE
 └─ readme.md
 ```
 
@@ -119,4 +108,5 @@ WD-ProjectName
 <!-- TODO: Add References -->
 | Title | Purpose | Link |
 |-|-|-|
-| Sample Title | Sample purpose would be here like this and this is the example of what it is. | trykolang.com |
+| Github | Projects | https://github.com/metrotee1?tab=repositories |
+| Google | Images | https://google.com |
