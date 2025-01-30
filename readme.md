@@ -95,7 +95,10 @@ AWD-Seatwork-1-3-MI-25
 |   └─ css
 |   |   └─ style.css
 |   └─ img
-|   |   └─ fileWith.jpeg/.jpg/.webp/.png
+|   |   └─ dpwlv.jpg
+|   |   └─ joker.jpeg
+|   |   └─ kllogo.ico
+|   |    └─ kllogo.png
 |   └─ js
 |       └─ script.js
 |
