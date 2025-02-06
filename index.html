@@ -26,17 +26,46 @@
     <div id="movies">
         <div class="movie">
             <img src="./assets/img/dpwlv.jpg" alt="Movie 1">
+            <div class="movie-title">Joker</div>
+            <div class="movie-price">PHP 250 per seat</div>
             <button onclick="reserveSeats('movie1')">Reserve seats for Movie 1</button>
             <input type="number" id="movie1Seats" min="1" max="10" value="1" />
             <button onclick="unreserveSeats('movie1')">Remove reserved seats</button>
             <p id="status_movie1" class="status-output"></p>
+
+            <div id="payment_movie1" class="payment-section" style="display: none;">
+                <button onclick="payForSeats('movie1')">Proceed to Payment</button>
+                <div class="seat-arrangement-popup" id="seat-arrangement1" style="display: none;">
+                    <img src="./assets/img/seat-arrangement.jpg" alt="Seat Arrangement">
+                    <button onclick="closeSeatArrangement('movie1')">Close</button>
+                </div>
+            </div>
         </div>
+
         <div class="movie">
             <img src="./assets/img/joker.jpeg" alt="Movie 2">
+            <div class="movie-title">Deadpool and Wolverine</div>
+            <div class="movie-price">PHP 250 per seat</div>
             <button onclick="reserveSeats('movie2')">Reserve seats for Movie 2</button>
             <input type="number" id="movie2Seats" min="1" max="10" value="1" />
-            <button onclick="unreserveSeats('movie2')">Remove reserved seats.</button>
+            <button onclick="unreserveSeats('movie2')">Remove reserved seats</button>
             <p id="status_movie2" class="status-output"></p>
+
+            <div id="payment_movie2" class="payment-section" style="display: none;">
+                <button onclick="payForSeats('movie2')">Proceed to Payment</button>
+                <div class="seat-arrangement-popup" id="seat-arrangement2" style="display: none;">
+                    <img src="./assets/img/seat-arrangement.jpg" alt="Seat Arrangement">
+                    <button onclick="closeSeatArrangement('movie2')">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="payment-modal" class="payment-modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Payment Confirmation</h2>
+            <p id="payment-message"></p>
+            <button onclick="closePaymentModal()">Close</button>
         </div>
     </div>
 
