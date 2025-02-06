@@ -84,6 +84,3 @@ function closePaymentModal() {
 function closeSeatArrangement(movie) {
     document.getElementById(`seat-arrangement${movie}`).style.display = 'none';
 }
-asdadadasdassadasdsdads
-asdadadasdassadasdsdadsasdadadasdaasdadadasdassadasdsdasdadadasdassadasdsasdadadasdassadasdsdads
-asdadadasdassadasdsdadsasdadadasdaasdadadasdassadasdsdasdadadasdassadasdsasdadadasdassadasdsdadsasdadadasdassadasdsda
