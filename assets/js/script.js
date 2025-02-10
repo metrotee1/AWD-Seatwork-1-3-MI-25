@@ -1,26 +1,29 @@
 document.addEventListener("DOMContentLoaded", function() {
+    loadReservedSeats();
     initializeSeatGrids();
 });
 
 function initializeSeatGrids() {
-    const movieIds = ["movie1", "movie2"];
-    
-    movieIds.forEach(movieId => {
-        const seatGrid = document.getElementById('seat-grid');
-        if (!seatGrid) return;
+    const seatGrid = document.getElementById('seat-grid');
+    if (!seatGrid) return;
+
+    seatGrid.innerHTML = "";
+
+    for (let i = 1; i <= 10; i++) {
+        const seat = document.createElement("div");
+        seat.classList.add("seat");
+        seat.textContent = i;
+        seat.dataset.seatNumber = i;
         
-        seatGrid.innerHTML = "";
-        
-        for (let i = 1; i <= 10; i++) {
-            const seat = document.createElement("div");
-            seat.classList.add("seat", "available");
-            seat.textContent = i;
-            seat.dataset.movie = movieId;
-            seat.dataset.seatNumber = i;
+        if (isSeatReserved(i)) {
+            seat.classList.add("reserved");
+            seat.style.cursor = "not-allowed";
+        } else {
+            seat.classList.add("available");
             seat.addEventListener("click", () => toggleSeatSelection(seat));
-            seatGrid.appendChild(seat);
         }
-    });
+        seatGrid.appendChild(seat);
+    }
 }
 
 function toggleSeatSelection(seat) {
@@ -28,9 +31,8 @@ function toggleSeatSelection(seat) {
     seat.classList.toggle("selected");
 }
 
-function openSeatSelectionPopup(movieId) {
+function openSeatSelectionPopup() {
     document.getElementById('seat-selection-popup').style.display = 'flex';
-    document.getElementById('movie-id').value = movieId;
     initializeSeatGrids();
 }
 
@@ -39,7 +41,6 @@ function closePopup() {
 }
 
 function confirmReservation() {
-    const movieId = document.getElementById('movie-id').value;
     const selectedSeats = document.querySelectorAll(`#seat-grid .seat.selected`);
     if (selectedSeats.length === 0 || selectedSeats.length > 5) {
         alert("Please select between 1 to 5 seats.");
@@ -49,40 +50,48 @@ function confirmReservation() {
     selectedSeats.forEach(seat => {
         seat.classList.remove("selected");
         seat.classList.add("reserved");
+        seat.style.cursor = "not-allowed";
+        saveSeatToLocalStorage(seat.dataset.seatNumber);
     });
 
     closePopup();
-    showReceiptModal();
+    showReceiptModal(selectedSeats.length);
 }
 
-function showReceiptModal() {
-    const movieId = document.getElementById('movie-id').value;
-    const reservedSeats = document.querySelectorAll(`#seat-grid .seat.reserved`);
-    const seatNumbers = Array.from(reservedSeats).map(seat => seat.textContent);
-    const totalPrice = reservedSeats.length * 250;
-    
-    document.getElementById('receipt-details').textContent = 
-        `You have selected seat(s) ${seatNumbers.join(", ")} for the movie.`;
+function showReceiptModal(seatCount) {
+    const totalPrice = seatCount * 250;
     document.getElementById('receipt-total').textContent = `Total Price: PHP ${totalPrice}`;
-
     document.getElementById('receipt-modal').style.display = 'flex';
 }
 
 function confirmPayment() {
     alert("Payment Successful! Your seats are now confirmed.");
     document.getElementById('receipt-modal').style.display = 'none';
-    resetReservedSeats();
 }
 
 function cancelPayment() {
     alert("Reservation Cancelled.");
     document.getElementById('receipt-modal').style.display = 'none';
-    resetReservedSeats();
 }
 
-function resetReservedSeats() {
-    const reservedSeats = document.querySelectorAll('.seat.reserved');
-    reservedSeats.forEach(seat => {
-        seat.classList.remove("reserved");
+function saveSeatToLocalStorage(seatNumber) {
+    let reservedSeats = JSON.parse(localStorage.getItem('reservedSeats')) || [];
+    reservedSeats.push(seatNumber);
+    localStorage.setItem('reservedSeats', JSON.stringify(reservedSeats));
+}
+
+function loadReservedSeats() {
+    let reservedSeats = JSON.parse(localStorage.getItem('reservedSeats')) || [];
+    reservedSeats.forEach(seatNumber => {
+        const seat = document.querySelector(`.seat[data-seat-number='${seatNumber}']`);
+        if (seat) {
+            seat.classList.add("reserved");
+            seat.style.cursor = "not-allowed";
+        }
     });
+}
+
+function isSeatReserved(seatNumber) {
+    let reservedSeats = JSON.parse(localStorage.getItem('reservedSeats')) || [];
+    return reservedSeats.includes(seatNumber.toString());
 }
